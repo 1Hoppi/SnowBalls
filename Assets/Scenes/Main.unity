@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 52103347}
   - component: {fileID: 52103348}
   m_Layer: 0
-  m_Name: Origin
+  m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   rot: 0
   minRot: -30
   maxRot: 60
-  rotSpeed: 80
+  rotSpeed: 100
 --- !u!1 &120708865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1048,7 @@ GameObject:
   - component: {fileID: 1816539739}
   - component: {fileID: 1816539740}
   m_Layer: 0
-  m_Name: Origin
+  m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   rot: -180
   minRot: 120
   maxRot: 210
-  rotSpeed: 80
+  rotSpeed: 100
 --- !u!1 &1862489521
 GameObject:
   m_ObjectHideFlags: 0
