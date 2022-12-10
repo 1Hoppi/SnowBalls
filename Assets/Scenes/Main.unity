@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 150
+  speed: 3
   jumpForce: 10
   isGrounded: 0
   upKey: 105
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 150
+  speed: 3
   jumpForce: 10
   isGrounded: 0
   upKey: 119

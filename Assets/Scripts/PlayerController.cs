@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour{
 	public void Update(){
 
 		float input = (Input.GetKey(rightKey) ? 1 : 0) - (Input.GetKey(leftKey) ? 1 : 0);
-		rb.velocity = new Vector2(input * speed * Time.deltaTime, rb.velocity.y);
+		Debug.Log(input);
+		rb.velocity = new Vector2(input * speed, rb.velocity.y);
 
 
 
