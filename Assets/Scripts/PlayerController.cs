@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour{
 	}
 
 	public void ChangeHP(int change){
-
 		hp += change;
 
 		mask.transform.localPosition = Vector3.right * hp * (moveLeft ? 0.5f : -0.5f);
