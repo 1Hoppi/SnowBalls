@@ -90,20 +90,25 @@ public class PlayerController : MonoBehaviour{
 
 	}
 
-	public IEnumerator ChangeHP(int change){
+	public void ChangeHP(int change){
 
 		hp += change;
 		Debug.Log(hp);
-		if(hp <= 0){
+		if(hp <= 0) Die();
 
-			gameObject.SetActive(false);
-			yield return new WaitForSeconds(3f);
+	}
 
-			int curr = int.Parse(SceneManager.GetActiveScene().name[5].ToString());
-			SceneManager.LoadScene($"Main{(curr + 1) % 3}");
+	private void Die(){
+	
+		gameObject.SetActive(false);
 
-		}
+		Debug.Log("Hello");
 
+		if(SceneManager.GetActiveScene().buildIndex+1 == SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(0);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
 	}
 
 }

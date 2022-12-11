@@ -11,7 +11,7 @@ public class SnowballController : MonoBehaviour{
 		if(other.CompareTag("Player1") || other.CompareTag("Player2")) {
 
             Destroy(gameObject);
-            StartCoroutine(other.gameObject.GetComponent<PlayerController>().ChangeHP(-1));
+            other.gameObject.GetComponent<PlayerController>().ChangeHP(-1);
 
         }
 
