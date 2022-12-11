@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
-
-	public Rigidbody2D rb;
+	
+	private Rigidbody2D rb;
 
 	public float speed = 10f;
 	public float jumpForce = 5f;
 	public bool isGrounded = true;
 
 	private Vector2 oldVelocity = Vector2.zero;
+
 
 
 
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour{
 	public void Update(){
 
 		float input = (Input.GetKey(rightKey) ? 1 : 0) - (Input.GetKey(leftKey) ? 1 : 0);
-		Debug.Log(input);
 		rb.velocity = new Vector2(input * speed, rb.velocity.y);
 
 

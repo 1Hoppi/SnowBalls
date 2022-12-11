@@ -40,9 +40,12 @@ public class ThrowController : MonoBehaviour{
 			GameObject snowball = Instantiate(snowballPrefab);
 
 			snowball.transform.position = transform.position + transform.rotation * Vector2.right * 0.75f;
-			snowball.GetComponent<Rigidbody2D>().velocity = transform.rotation * Vector2.right * snowballSpeed;
+			snowball.GetComponent<Rigidbody2D>().velocity =
+				transform.rotation * Vector2.right * snowballSpeed;
 
 			Destroy(snowball, 5f);
+
+			
 
 		}
 
