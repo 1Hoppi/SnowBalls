@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621334899253606}
   - component: {fileID: 4697621334899253601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621334959314410}
   - component: {fileID: 4697621335022672658}
-  - component: {fileID: 4697621335022672659}
+  - component: {fileID: 313956254933535605}
   - component: {fileID: 4697621335022672656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -141,8 +141,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4697621335022672659
-CapsuleCollider2D:
+--- !u!61 &313956254933535605
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -154,9 +154,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.9999999}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.075}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 2}
+  m_EdgeRadius: 0
 --- !u!114 &4697621335022672656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,9 +198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621336469392319}
   - component: {fileID: 4697621335111764721}
-  - component: {fileID: 4697621335111764726}
+  - component: {fileID: 9053493311927798470}
   - component: {fileID: 4697621335111764727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -235,8 +245,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4697621335111764726
-CapsuleCollider2D:
+--- !u!61 &9053493311927798470
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -248,9 +258,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.9999999}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.075}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 2}
+  m_EdgeRadius: 0
 --- !u!114 &4697621335111764727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4697621335400814756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,7 +472,7 @@ GameObject:
   - component: {fileID: 4697621335888253855}
   - component: {fileID: 4697621335888253852}
   - component: {fileID: 4697621335888253853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +577,7 @@ GameObject:
   - component: {fileID: 4697621335999301624}
   - component: {fileID: 4697621335999301626}
   - component: {fileID: 4697621335999301627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621336370463402}
   - component: {fileID: 4697621336370463413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621336462639709}
   - component: {fileID: 4697621336462639708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,9 +806,9 @@ MonoBehaviour:
   snowballPrefab: {fileID: 6644298382883101569, guid: 9f2529bb30617efccb6057ca3e82e512, type: 3}
   shootKey: 115
   canThrow: 1
+  isThrowing: 0
   throwCooldown: 0.5
   snowballSpeed: 15
-  rot: 0
   minRot: -30
   maxRot: 60
   rotSpeed: 100
@@ -802,7 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697621336582224192}
   - component: {fileID: 4697621336582224195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,9 +863,9 @@ MonoBehaviour:
   snowballPrefab: {fileID: 6644298382883101569, guid: 9f2529bb30617efccb6057ca3e82e512, type: 3}
   shootKey: 107
   canThrow: 1
+  isThrowing: 0
   throwCooldown: 0.5
   snowballSpeed: 15
-  rot: 0
   minRot: -30
   maxRot: 60
   rotSpeed: 100

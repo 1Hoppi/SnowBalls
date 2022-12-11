@@ -93,7 +93,9 @@ public class PlayerController : MonoBehaviour{
 	public void ChangeHP(int change){
 
 		hp += change;
-		Debug.Log(hp);
+
+
+
 		if(hp <= 0) Die();
 
 	}
@@ -101,8 +103,6 @@ public class PlayerController : MonoBehaviour{
 	private void Die(){
 	
 		gameObject.SetActive(false);
-
-		Debug.Log("Hello");
 
 		if(SceneManager.GetActiveScene().buildIndex+1 == SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(0);

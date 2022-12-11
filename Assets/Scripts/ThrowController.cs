@@ -13,12 +13,15 @@ public class ThrowController : MonoBehaviour{
 	
 	public KeyCode shootKey = KeyCode.S;
 
-	public bool canThrow = true;
+	public bool
+		canThrow = true,
+		isThrowing = false;
+
 	public float throwCooldown = 1f;
 
 	public float snowballSpeed = 30f;
 
-	public float rot = 0f;
+	private float rot = 0f;
 	public float minRot = -30f, maxRot = 60f;
 	public float rotSpeed = 100f;
 
@@ -32,6 +35,8 @@ public class ThrowController : MonoBehaviour{
 	}
 
 	void Update(){
+
+		if(isThrowing) return;
 		
 		float realRot, realMinRot, realMaxRot, realRotSpeed;
 		if(player1.position.x <= player2.position.x){
@@ -85,6 +90,7 @@ public class ThrowController : MonoBehaviour{
 
 		canThrow = false;
 
+		isThrowing = true;
 		animator.SetBool("Throwing", true);
 
 		yield return new WaitForSeconds(0.25f);
@@ -95,7 +101,8 @@ public class ThrowController : MonoBehaviour{
 		snowball.transform.position = transform.position + transform.rotation * Vector2.right * 0.75f;
 		snowball.GetComponent<Rigidbody2D>().velocity =
 			transform.rotation * Vector2.right * snowballSpeed;
-
+		
+		isThrowing = false;
 		animator.SetBool("Throwing", false);
 
 		yield return new WaitForSeconds(throwCooldown);
