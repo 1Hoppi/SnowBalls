@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour{
 	}
 
 	void Update(){
-
+		
 		float newSize = Mathf.Clamp(Mathf.Abs(player1.position.x - player2.position.x) / 3f, minSize, maxSize);
 		cam.orthographicSize = newSize;
 

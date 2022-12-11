@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour{
 	
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour{
 		isReloading = false;
 
 	private int collisionsCount = 0;
+
+	private int hp = 5;
 
 
 
@@ -84,6 +87,22 @@ public class PlayerController : MonoBehaviour{
 		isReloading = false;
 		
 		animator.SetBool("Reloading", false);
+
+	}
+
+	public IEnumerator ChangeHP(int change){
+
+		hp += change;
+		Debug.Log(hp);
+		if(hp <= 0){
+
+			gameObject.SetActive(false);
+			yield return new WaitForSeconds(3f);
+
+			int curr = int.Parse(SceneManager.GetActiveScene().name[5].ToString());
+			SceneManager.LoadScene($"Main{(curr + 1) % 3}");
+
+		}
 
 	}
 

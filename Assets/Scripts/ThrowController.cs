@@ -32,7 +32,7 @@ public class ThrowController : MonoBehaviour{
 	}
 
 	void Update(){
-
+		
 		float realRot, realMinRot, realMaxRot, realRotSpeed;
 		if(player1.position.x <= player2.position.x){
 
