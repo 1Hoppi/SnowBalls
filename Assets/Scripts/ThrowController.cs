@@ -25,13 +25,13 @@ public class ThrowController : MonoBehaviour{
 	public float minRot = -30f, maxRot = 60f;
 	public float rotSpeed = 100f;
 
-
+	PlayerController pc;
 
 	private void Start(){
 		
 		animator = Sprite.GetComponent<Animator>();
 		renderer = Sprite.GetComponent<SpriteRenderer>();
-
+		pc = gameObject.GetComponentInParent<PlayerController>();
 	}
 
 	void Update(){
@@ -79,7 +79,7 @@ public class ThrowController : MonoBehaviour{
 
 
 
-		if(Input.GetKeyDown(shootKey))
+		if(Input.GetKeyDown(shootKey) && pc.snowballsCount > 0)
 			StartCoroutine(Throw());
 
 	}
@@ -96,6 +96,10 @@ public class ThrowController : MonoBehaviour{
 		yield return new WaitForSeconds(0.25f);
 
 		GameObject snowball = Instantiate(snowballPrefab);
+
+        pc.snowballs[pc.snowballsCount-1].SetActive(false);
+        pc.snowballsCount--;
+
 		Destroy(snowball, 5f);
 
 		snowball.transform.position = transform.position + transform.rotation * Vector2.right * 0.75f;

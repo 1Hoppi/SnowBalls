@@ -13,9 +13,14 @@ public class PlayerController : MonoBehaviour{
 	public bool isGrounded = false,
 		isReloading = false;
 
+	public List<GameObject> snowballs = new List<GameObject>();
+	public int snowballsCount = 3;
+	public GameObject mask;
+	public bool moveLeft;
+
 	private int collisionsCount = 0;
 
-	private int hp = 5;
+	public int hp = 5;
 
 
 
@@ -36,7 +41,7 @@ public class PlayerController : MonoBehaviour{
 
 	public void Update(){
 		
-		if(Input.GetKeyDown(reloadKey) && isGrounded)
+		if(Input.GetKeyDown(reloadKey) && isGrounded && snowballsCount < 3 && !isReloading)
 			StartCoroutine(Reload());
 
 		if(!isReloading){
@@ -85,7 +90,10 @@ public class PlayerController : MonoBehaviour{
 
 		yield return new WaitForSeconds(1f);
 		isReloading = false;
-		
+
+        snowballs[snowballsCount].SetActive(true);
+        snowballsCount++;
+
 		animator.SetBool("Reloading", false);
 
 	}
@@ -94,8 +102,9 @@ public class PlayerController : MonoBehaviour{
 
 		hp += change;
 
+		mask.transform.localPosition = Vector3.right * hp * (moveLeft ? 0.5f : -0.5f);
 
-
+		Debug.Log(hp);
 		if(hp <= 0) Die();
 
 	}
