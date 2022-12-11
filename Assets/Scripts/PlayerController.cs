@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour{
 
 	public int hp = 5;
 
-
+	public Sprite iced;
+	public GameObject spriteObj;
 
 	public KeyCode
 		upKey = KeyCode.W,
@@ -60,25 +61,18 @@ public class PlayerController : MonoBehaviour{
 
 		}
 
-
+		GroundCheck();
 
 		animator.SetBool("Jumping", !isGrounded);
 		animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 		
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision){
-
-		if(collision.gameObject.CompareTag("Environment")) collisionsCount++;
-        if(collisionsCount > 0) isGrounded = true;
-
-    }
-    private void OnCollisionExit2D(Collision2D collision){
-
-        if(collision.gameObject.CompareTag("Environment")) collisionsCount--;
-        if(collisionsCount == 0) isGrounded = false;
-
-    }
+	void GroundCheck()
+	{
+		if (rb.velocity.y == 0) isGrounded = true;
+		else isGrounded = false;
+	}
 
 	private IEnumerator Reload(){
 		
@@ -110,13 +104,28 @@ public class PlayerController : MonoBehaviour{
 
 	private void Die(){
 	
+		spriteObj.GetComponent<SpriteRenderer>().sprite = iced;
 		gameObject.SetActive(false);
-
+	
+	
 		if(SceneManager.GetActiveScene().buildIndex+1 == SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(0);
         else
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
 	}
+
+    //private IEnumerator Die()
+    //{
+    //    spriteObj.GetComponent<SpriteRenderer>().sprite = iced;
+	//
+    //    yield return new WaitForSeconds(3f);
+	//
+    //    if (SceneManager.GetActiveScene().buildIndex + 1 == SceneManager.sceneCountInBuildSettings)
+    //        SceneManager.LoadScene(0);
+    //    else
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	//
+    //}
 
 }

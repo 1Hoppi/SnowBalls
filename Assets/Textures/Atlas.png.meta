@@ -272,6 +272,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 223
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4a9f4b20af8f64bbbf08d041916881
+      internalID: -1019640446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -284,6 +305,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Atlas_6: -2009637404
+      Atlas_8: -1019640446
       Atlas_3: 208228103
       Atlas_2: -1680841501
       Atlas_5: -1845460056

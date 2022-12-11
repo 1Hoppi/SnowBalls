@@ -1016,6 +1016,8 @@ MonoBehaviour:
   mask: {fileID: 1699850698569798151}
   moveLeft: 1
   hp: 5
+  iced: {fileID: -1019640446, guid: d0fa330444087da4f82c0707b496c0c9, type: 3}
+  spriteObj: {fileID: 4697621335888253842}
   upKey: 105
   rightKey: 108
   leftKey: 106
@@ -1128,6 +1130,8 @@ MonoBehaviour:
   mask: {fileID: 7449023236980139381}
   moveLeft: 0
   hp: 5
+  iced: {fileID: -1019640446, guid: d0fa330444087da4f82c0707b496c0c9, type: 3}
+  spriteObj: {fileID: 4697621335999301625}
   upKey: 119
   rightKey: 100
   leftKey: 97
