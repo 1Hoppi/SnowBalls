@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour{
 
-	public float
+	[SerializeField]
+	private float
 		minSize = 3f,
 		maxSize = 9f;
 
-	private Camera cam;
+	[SerializeField]
+	private Vector2 size = new Vector2(30f, 50f), centerOffset = new Vector2(), padding = new Vector2(1f, 2f);
 
-	public Transform player1, player2;
+	[SerializeField]
+	private Transform player1, player2;
+
+	private Camera cam;
 
 	void Start(){
 
@@ -20,18 +25,37 @@ public class CameraController : MonoBehaviour{
 
 	void Update(){
 		
+		float magicConst = 1.75f, // used to convert camera size to units
+		aspectRatio = 16f / 9f;
+
+		// calculate new size of the camera based on players' positions
 		float newSize = Mathf.Clamp(
 			Mathf.Max(
-				Mathf.Abs(player1.position.x - player2.position.x) / (1.7f * 16f / 9f) + 1f,
-				Mathf.Abs(player1.position.y - player2.position.y) / (1.7f) + 2f
-		), minSize, maxSize);
-		
+				Mathf.Abs(player1.position.x - player2.position.x) / (magicConst * aspectRatio) + padding.x,
+				Mathf.Abs(player1.position.y - player2.position.y) / magicConst + padding.y
+			),
+			minSize,
+			maxSize
+		);
+
+		// apply the new size
 		cam.orthographicSize = newSize;
 
-		transform.position = new Vector3(
-			Mathf.Clamp((player1.position.x + player2.position.x) / 2f, -15 + newSize * 3.5f / 2f, 15 - newSize * 3.5f / 2f),
-			Mathf.Max((player1.position.y + player2.position.y) / 2f, newSize - 5.25f),
-		-10f);
+		// calculate camera's new position based on players' positions and edges of the map
+		float
+		newX = Mathf.Clamp(
+			(player1.position.x + player2.position.x) / 2f, // mean of players' x coords
+			(-size.x / 2f + centerOffset.x)  +  newSize * magicConst, // left edge + half of camera's width
+			(+size.x / 2f + centerOffset.x)  -  newSize * magicConst  // right edge - half of camera's width
+		),
+		newY = Mathf.Clamp(
+			(player1.position.y + player2.position.y) / 2f, // mean of players' y coords
+			(-size.y / 2f + centerOffset.y)  +  newSize * magicConst / aspectRatio, // bottom edge + half of camera's height
+			(+size.y / 2f + centerOffset.y)  -  newSize * magicConst / aspectRatio  // top edge - half of camera's height
+		);
+
+		// apply new position
+		transform.position = new Vector3(newX, newY, -10f);
 
 	}
 	
