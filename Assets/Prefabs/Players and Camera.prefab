@@ -500,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4697621334959314410
 Transform:
   m_ObjectHideFlags: 0
@@ -578,8 +578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrower: {fileID: 4697621336582224195}
-  speed: 10
-  jumpForce: 5
+  speed: 3
+  jumpForce: 11
   canMove: 1
   upKey: 105
   leftKey: 106
@@ -711,8 +711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrower: {fileID: 4697621336462639708}
-  speed: 10
-  jumpForce: 5
+  speed: 3
+  jumpForce: 11
   canMove: 1
   upKey: 119
   leftKey: 97
@@ -879,8 +879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSize: 4
   maxSize: 8.5
-  size: {x: 30, y: 50}
-  centerOffset: {x: 0, y: 0}
+  size: {x: 29, y: 50}
+  centerOffset: {x: 0, y: 20}
   padding: {x: 1, y: 2}
   player1: {fileID: 4697621336469392319}
   player2: {fileID: 4697621334959314410}
@@ -1265,8 +1265,8 @@ MonoBehaviour:
   - {fileID: 2820819321152485771}
   - {fileID: 2329308039741294694}
   - {fileID: 6432215524759431124}
-  snowballSpeed: 30
-  throwCooldown: 1
+  snowballSpeed: 15
+  throwCooldown: 0.5
   rotSpeed: 100
   minRot: -30
   maxRot: 60
@@ -1324,8 +1324,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  snowballSpeed: 30
-  throwCooldown: 1
+  snowballSpeed: 15
+  throwCooldown: 0.5
   rotSpeed: 100
   minRot: -30
   maxRot: 60

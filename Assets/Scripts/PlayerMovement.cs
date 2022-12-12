@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour{
 
 		// check if grounded and jump
 		GroundCheck();
-		if(Input.GetKeyDown(upKey) && isGrounded) Jump();
+		if(Input.GetKey(upKey) && isGrounded) Jump();
 
 	}
 

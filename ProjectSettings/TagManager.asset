@@ -8,6 +8,7 @@ TagManager:
   - Background
   - Player1
   - Player2
+  - Walls
   layers:
   - Default
   - TransparentFX

@@ -111,6 +111,8 @@ public class PlayerThrower : MonoBehaviour{
 
 	private IEnumerator Reload(){
 
+		if(isReloading || snowballCount >= 3) yield break;
+
 		isReloading = true;
 		animator.Reload();
 

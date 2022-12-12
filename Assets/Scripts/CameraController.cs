@@ -41,18 +41,25 @@ public class CameraController : MonoBehaviour{
 		// apply the new size
 		cam.orthographicSize = newSize;
 
+		float
+			leftEdge = -size.x / 2f  +  newSize * magicConst,
+			bottomEdge = (-size.y / 2f)  +  newSize * magicConst / aspectRatio;
+
 		// calculate camera's new position based on players' positions and edges of the map
 		float
 		newX = Mathf.Clamp(
 			(player1.position.x + player2.position.x) / 2f, // mean of players' x coords
-			(-size.x / 2f + centerOffset.x)  +  newSize * magicConst, // left edge + half of camera's width
-			(+size.x / 2f + centerOffset.x)  -  newSize * magicConst  // right edge - half of camera's width
+			+leftEdge + centerOffset.x, // left edge + half of camera's width
+			-leftEdge + centerOffset.x  // right edge - half of camera's width
 		),
 		newY = Mathf.Clamp(
 			(player1.position.y + player2.position.y) / 2f, // mean of players' y coords
-			(-size.y / 2f + centerOffset.y)  +  newSize * magicConst / aspectRatio, // bottom edge + half of camera's height
-			(+size.y / 2f + centerOffset.y)  -  newSize * magicConst / aspectRatio  // top edge - half of camera's height
+			+bottomEdge + centerOffset.y, // bottom edge + half of camera's height
+			-bottomEdge + centerOffset.y  // top edge - half of camera's height
 		);
+
+		if(newX < leftEdge + centerOffset.x || newX > -leftEdge + centerOffset.x) newX = centerOffset.x;
+		if(newY < bottomEdge + centerOffset.y || newY > -bottomEdge + centerOffset.y) newY = centerOffset.y;
 
 		// apply new position
 		transform.position = new Vector3(newX, newY, -10f);
