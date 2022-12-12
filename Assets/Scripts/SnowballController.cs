@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SnowballController : MonoBehaviour{
 
-    public bool byPlayer1;
+    public bool fromPlayer1;
 
     private void OnTriggerEnter2D(Collider2D other){
 
@@ -15,8 +15,8 @@ public class SnowballController : MonoBehaviour{
         ) Destroy(gameObject);
 
 		else if(
-            (other.CompareTag("Player1") && !byPlayer1) || 
-            (other.CompareTag("Player2") &&  byPlayer1)
+            (other.CompareTag("Player1") && !fromPlayer1) || 
+            (other.CompareTag("Player2") &&  fromPlayer1)
         ){
 
             Destroy(gameObject);

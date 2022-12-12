@@ -8,8 +8,9 @@ public class PlayerThrower : MonoBehaviour{
 	[SerializeField]
 	private PlayerAnimation animator;
 
+	private Transform currentPlayer;
 	[SerializeField]
-	private Transform player1, player2;
+	private Transform otherPlayer;
 	[SerializeField]
 	private GameObject snowballPrefab;
 
@@ -45,6 +46,12 @@ public class PlayerThrower : MonoBehaviour{
 
 
 	
+	void Start(){
+
+		currentPlayer = gameObject.transform.parent;
+
+	}
+
 	void Update(){
 
 		if(isThrowing) return;
@@ -69,7 +76,7 @@ public class PlayerThrower : MonoBehaviour{
 
 		}
 		// apply the rotation
-		transform.rotation = Quaternion.Euler(0, 0, (player1.position.x <= player2.position.x) ? rot : 180f - rot);
+		transform.rotation = Quaternion.Euler(0, 0, (currentPlayer.position.x <= otherPlayer.position.x) ? rot : 180f - rot);
 
 	}
 
@@ -91,6 +98,7 @@ public class PlayerThrower : MonoBehaviour{
 		// change snowball's position and velocity
 		snowball.transform.position = transform.position + transform.rotation * Vector2.right * 0.75f;
 		snowball.GetComponent<Rigidbody2D>().velocity = (transform.rotation * Vector2.right) * snowballSpeed;
+		snowball.GetComponent<SnowballController>().fromPlayer1 = currentPlayer.gameObject.CompareTag("Player1");
 
 		// change snowball counter
         snowballs[--snowballCount].SetActive(false);
